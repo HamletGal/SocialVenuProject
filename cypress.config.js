@@ -6,6 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl:"https://dashboard-release.socialvenu.com/",
+    BACKEND_URL:"https://sv-api-rc.socialvenu.com",
     email:"arthurp@doublecoconut.com",
     password:"123456",
   },
