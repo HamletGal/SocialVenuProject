@@ -1,22 +1,25 @@
 class PerformacePage{
 
+    topBarTitle = "#chart-topbar-title";
+    statisticBlockVideos = '#statistic-block-Videos';
+    statisticBlockShares = '#statistic-block-Shares';
+    statisticBlockCreators = '#statistic-block-Creators';
     calendarButton = "div > svg[data-testid='CalendarTodayIcon']";
-    
 
     visit(){
         cy.visit("dashboard/creators");
     }
 
     getTitleText(){
-        return cy.get("#chart-topbar-title").text();
+        return cy.get(this.topBarTitle).text();
     }
 
     StatisticBlockVideosBtn(){
-        return cy.get('#statistic-block-Videos').should('be.visible').click();
+        return cy.get(this.statisticBlockVideos).should('be.visible').click();
     }
 
     StatisticBlockSharesBtn(){
-        return cy.get('#statistic-block-Shares').should('be.visible').click();
+        return cy.get(this.statisticBlockShares).should('be.visible').click();
     }
 
     StatisticBlockViewsBtn(){
@@ -29,7 +32,7 @@ class PerformacePage{
     }
 
     StatisticBlockCreatorsBtn(){
-        return cy.get('#statistic-block-Creators').should('be.visible').click();
+        return cy.get(this.statisticBlockCreators).should('be.visible').click();
     }
 
 
