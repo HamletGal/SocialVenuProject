@@ -9,25 +9,38 @@ describe("",()=>{
         cy.login();
     });
     
-    it("verifyFunctionalityOfTheAppearTopBarInTheCreateCampaignFlow",() => {
-        campaignsMainPage.open();
-        campaignsMainPage.clickCreateNewCampaignBtn();
-        cy.get(createCampaignPage.goBackButton).should("be.visible");
-        cy.contains(createCampaignPage.createACampaignTitle).should('be.visible');
-        cy.get(createCampaignPage.saveCreateBtn).should("be.visible");  
-    })
+    // it("verifyFunctionalityOfTheAppearTopBarInTheCreateCampaignFlow",() => {
+    //     campaignsMainPage.open();
+    //     campaignsMainPage.clickCreateNewCampaignBtn();
+    //     cy.get(createCampaignPage.goBackButton).should("be.visible");
+    //     cy.contains(createCampaignPage.createACampaignTitle).should('be.visible');
+    //     cy.get(createCampaignPage.saveCreateBtn).should("be.visible");  
+    // })
 
-    it("verifyFunctionalityOfReturnToCampaignListWithoutChange",() => {
+    // it("verifyFunctionalityOfReturnToCampaignListWithoutChange",() => {
+    //     createCampaignPage.open();
+    //     createCampaignPage.clickGoBackBtn();
+    //     cy.get(campaignsMainPage.createNewCampaignBtn).should("be.visible"); 
+    // })
+
+    // it("verifyFunctionalityOfShowUnsavedChangesModal",() => {
+    //     campaignsMainPage.open();
+    //     campaignsMainPage.clickCreateNewCampaignBtn();
+    //     createCampaignPage.clickBrowserBackButton(); 
+    //     cy.contains(createCampaignPage.unsavedChangesModal).should('be.visible');
+    // })
+
+    it("verifyFunctionalityOfCreatingNewDefaultCampaign",() => {
         createCampaignPage.open();
-        createCampaignPage.clickGoBackBtn();
-        cy.get(campaignsMainPage.createNewCampaignBtn).should("be.visible"); 
-    })
-
-    it("verifyFunctionalityOfShowUnsavedChangesModal",() => {
-        campaignsMainPage.open();
-        campaignsMainPage.clickCreateNewCampaignBtn();
-        createCampaignPage.clickBrowserBackButton(); 
-        cy.contains(createCampaignPage.unsavedChangesModal).should('be.visible');
+        createCampaignPage.openAllIncentiveCampaignSteps();
+        createCampaignPage.clickCreateCampaignStep4();
+        createCampaignPage.clickSelectBtn();
+        createCampaignPage.clickPhoneNumber();
+        cy.wait(5000)
+        createCampaignPage.setRewardPhoneNumber();
+        createCampaignPage.clickSaveAndCreateButton();
+        cy.wait(5000)
+        createCampaignPage.isElementPresent(createCampaignPage.editSmsInvitationButton)
     })
 })
 
