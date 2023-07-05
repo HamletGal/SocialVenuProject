@@ -10,19 +10,19 @@ export  class BasePage{
     }
 
     clickBrowserBackButton(){
-      return cy.go("back");
+      cy.go("back");
     }
 
     eraseAllTextField(element){
-      return cy.get(element).clear({force: true});
+      cy.get(element).clear({force: true});
     }
 
     waitTextFieldShouldBeEmpty(element, condition, empty) {
-      return cy.get(element).should(condition, empty);
+      cy.get(element).should(condition, empty);
     }
 
     waitElementToPresent(element){
-      return cy.get(element).should('be.visible').should('not.be.disabled');
+      cy.get(element).should('be.visible').should('not.be.disabled');
     }
 
 
@@ -32,7 +32,7 @@ export  class BasePage{
     }
 
     isElementPresent(element) {
-      return cy.get(element).should('exist');
+      cy.get(element).should('exist');
     }
 
 

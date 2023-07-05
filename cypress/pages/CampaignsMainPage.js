@@ -5,7 +5,7 @@ class CampaignsMainPage extends BasePage{
     createNewCampaignBtn = "#create-new-campaign-button";
        
     clickCreateNewCampaignBtn(){
-        return cy.get(this.createNewCampaignBtn).should('be.visible').click();
+       cy.get(this.createNewCampaignBtn).should('be.visible').click();
     }
 
     getUrl(){

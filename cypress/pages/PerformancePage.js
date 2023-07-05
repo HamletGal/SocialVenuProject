@@ -11,33 +11,33 @@ class PerformacePage{
     }
 
     getTitleText(){
-        return cy.get(this.topBarTitle).text();
+        cy.get(this.topBarTitle).text();
     }
 
     StatisticBlockVideosBtn(){
-        return cy.get(this.statisticBlockVideos).should('be.visible').click();
+        cy.get(this.statisticBlockVideos).should('be.visible').click();
     }
 
     StatisticBlockSharesBtn(){
-        return cy.get(this.statisticBlockShares).should('be.visible').click();
+        cy.get(this.statisticBlockShares).should('be.visible').click();
     }
 
     StatisticBlockViewsBtn(){
-        return cy.contains('Views').click({force:true});
+        cy.contains('Views').click({force:true});
     }
 
     StatisticBlockClicksBtn(){
-        return cy.contains('Clicks').click({force:true});
+        cy.contains('Clicks').click({force:true});
 
     }
 
     StatisticBlockCreatorsBtn(){
-        return cy.get(this.statisticBlockCreators).should('be.visible').click();
+        cy.get(this.statisticBlockCreators).should('be.visible').click();
     }
 
 
     ClickCalendarButton(){
-        return cy.get(this.calendarButton).click({force:true});
+        cy.get(this.calendarButton).click({force:true});
     }
   
 

@@ -11,19 +11,19 @@ class DasboardLoginPage{
     }
 
     emailField(text){
-        return cy.get(this.email).type(text,{ force:true });
+        cy.get(this.email).type(text,{ force:true });
     }
 
     passwordField(text){
-        return cy.get(this.password).type(text,{ force:true });
+        cy.get(this.password).type(text,{ force:true });
     }
 
     pressSignInButton(){
-        return cy.get(this.signInBtn).click({ force:true });
+       cy.get(this.signInBtn).click({ force:true });
     }
 
     allAccountsButton(){
-        return this.allAccountsBtn;
+        this.allAccountsBtn;
     }
 
 

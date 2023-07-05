@@ -1,5 +1,6 @@
 import { BasePage } from "./BasePage";
 
+
 class CreateCampaignPage extends BasePage{
 
     createCampaignSteps = [];
@@ -14,13 +15,14 @@ class CreateCampaignPage extends BasePage{
     saveAndCreateButton = "#save-and-create-button"; 
     editSmsInvitationButton = "#edit-sms-invitation-button";
 
+   
 
     getUrl(){
         return super.getUrl("new-campaign/campaign-objectives");
     }
     
     clickGoBackBtn(){
-        return cy.get(this.goBackButton).should("be.visible").click();
+        cy.get(this.goBackButton).should("be.visible").click();
     }
 
     openAllIncentiveCampaignSteps() {
@@ -38,15 +40,15 @@ class CreateCampaignPage extends BasePage{
       }
 
     clickCreateCampaignStep4(){
-        return cy.get(this.createCampaignStep4).should("be.visible").click();
+        cy.get(this.createCampaignStep4).should("be.visible").click();
     }
 
     clickSelectBtn(){
-        return cy.contains(this.contactMethodSelectBtn).should('be.visible').click({force:true});
+        cy.contains(this.contactMethodSelectBtn).should('be.visible').click({force:true});
     }
 
     clickPhoneNumber(){
-        return cy.contains(this.phoneNumber).should('be.visible').click({force:true});
+        cy.contains(this.phoneNumber).should('be.visible').click({force:true});
     }
 
     setRewardPhoneNumber(){
@@ -59,10 +61,10 @@ class CreateCampaignPage extends BasePage{
 
     clickSaveAndCreateButton(){
         super.waitElementToPresent(this.saveAndCreateButton);
-        return cy.get(this.saveAndCreateButton).click();
+        cy.get(this.saveAndCreateButton).click();
     }
 
-    
+
 
 
 }
